@@ -810,7 +810,6 @@ summary:focus-visible {
 .social__link svg { width: 20px; height: 20px; fill: currentColor; }
 a.social__link:hover { background: var(--accent-600); transform: translateY(-2px); }
 /* No profile URL configured yet — shown, but visibly not a link. */
-.social__link--todo { background: var(--line); color: var(--ink-muted); cursor: help; }
 
 /* ---------- Photo hero ----------
    A real photograph rather than a graphic, with the title as HTML text laid
