@@ -115,7 +115,7 @@
       '<div class="shell">' +
         '<div class="header-top">' +
           '<a class="brand" href="./index.html" aria-label="' + SITE.name + ' — back to home page">' +
-            '<img src="./images/logo.svg" alt="" width="40" height="40">' +
+            '<img src="./logo.svg" alt="" width="40" height="40">' +
             '<span class="brand__text">' +
               '<span class="brand__name">' + SITE.name + '</span>' +
               '<span class="brand__tag">' + SITE.tagline + '</span>' +
