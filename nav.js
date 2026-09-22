@@ -40,7 +40,6 @@
   var SECTIONS = {
     'index.html': [
       { id: 'what-i-do',  label: 'What I do' },
-      { id: 'principles', label: 'Site principles' },
       { id: 'next-step',  label: 'Next step' }
     ],
     'about.html': [
@@ -55,8 +54,8 @@
       { id: 'approach', label: 'Approach' }
     ],
     'contact.html': [
-      { id: 'form',    label: 'Feedback form' },
       { id: 'reach',   label: 'Reach me' },
+      { id: 'form',    label: 'Feedback form' },
       { id: 'faq',     label: 'FAQ' }
     ]
   };
@@ -204,8 +203,8 @@
         '<ul class="rail__info">' +
           '<li>Four pages, hand-written HTML, CSS and JavaScript</li>' +
           '<li>No framework and no page builder</li>' +
-          '<li>Body text contrast 16.5:1</li>' +
-          '<li>Built for Digital Marketing, Ivy College of Business</li>' +
+          '<li>Built to WCAG AA contrast</li>' +
+          '<li>Iowa State University, class of 2028</li>' +
         '</ul>' +
       '</section>' +
 
@@ -256,10 +255,9 @@
         '</div>' +
         '<div class="site-footer__legal">' +
           '<p>&copy; ' + new Date().getFullYear() + ' ' + SITE.name +
-          '. All rights reserved. Built for Digital Marketing, Ivy College of ' +
-          'Business, Iowa State University.</p>' +
-          '<p>Webmaster: <a href="mailto:' + SITE.webmaster + '">' + SITE.webmaster + '</a>' +
-          ' &middot; Currently viewing: ' + here.replace('.html', '') + '</p>' +
+          '. All rights reserved.</p>' +
+          '<p>Built and maintained by hand &middot; ' +
+          '<a href="mailto:' + SITE.email + '">' + SITE.email + '</a></p>' +
         '</div>' +
       '</div>';
   }

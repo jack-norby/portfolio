@@ -492,6 +492,10 @@ summary:focus-visible {
   .photo-row { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* The two cards here differ a lot in length, so let them size to their own
+   content instead of stretching and leaving an empty block of white. */
+#education .grid--2 { align-items: start; }
+
 /* A single supporting photo inside a card. */
 .card__photo {
   display: block;
