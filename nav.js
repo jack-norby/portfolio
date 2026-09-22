@@ -50,6 +50,7 @@
     'portfolio.html': [
       { id: 'work',     label: 'The work' },
       { id: 'solesync', label: 'SoleSync project' },
+      { id: 'brand-in-a-box', label: 'Brand-In-a-Box' },
       { id: 'roles',    label: 'Roles' },
       { id: 'approach', label: 'Approach' }
     ],
