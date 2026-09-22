@@ -46,11 +46,11 @@
     'about.html': [
       { id: 'education',  label: 'Education' },
       { id: 'experience', label: 'Experience' },
-      { id: 'skills',     label: 'Skills' },
-      { id: 'site-design', label: 'Site design' }
+      { id: 'skills',     label: 'Skills' }
     ],
     'portfolio.html': [
       { id: 'work',     label: 'The work' },
+      { id: 'video',    label: 'Campaign video' },
       { id: 'roles',    label: 'Roles' },
       { id: 'approach', label: 'Approach' }
     ],
@@ -64,9 +64,11 @@
   var SITE = {
     name: 'Jack Norby',
     tagline: 'Marketing, Entrepreneurship & Applied AI',
-    email: 'jacknorby@icloud.com',
-    webmaster: 'jacknorby@icloud.com',
-    location: 'Ames, Iowa'
+    email: 'jnorby@iastate.edu',
+    webmaster: 'jnorby@iastate.edu',
+    location: 'Ames, Iowa',
+    linkedin: 'https://www.linkedin.com/in/jack-norby',
+    linkedinLabel: 'linkedin.com/in/jack-norby'
   };
 
   /* Social networking icons for the sticky rail.
@@ -76,7 +78,7 @@
   var SOCIAL = [
     { name: 'Instagram', url: '', path: 'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.8 6a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 17.8 6z' },
     { name: 'TikTok',    url: '', path: 'M16.5 2h-3v12.2a2.6 2.6 0 1 1-2-2.5V8.6a5.9 5.9 0 1 0 5 5.8V8.9a6.4 6.4 0 0 0 3.5 1.1V7a3.6 3.6 0 0 1-3.5-3.5V2z' },
-    { name: 'LinkedIn',  url: '', path: 'M4.5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h3v12H3V9zm5.5 0h2.9v1.7h.05a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.65 2 3.65 4.6V21h-3v-5.8c0-1.4-.03-3.2-1.95-3.2s-2.25 1.5-2.25 3.1V21h-3V9z' },
+    { name: 'LinkedIn',  url: SITE.linkedin, path: 'M4.5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h3v12H3V9zm5.5 0h2.9v1.7h.05a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.65 2 3.65 4.6V21h-3v-5.8c0-1.4-.03-3.2-1.95-3.2s-2.25 1.5-2.25 3.1V21h-3V9z' },
     { name: 'Email',     url: 'mailto:' + SITE.email, path: 'M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2-.5L12 11.2 19.8 5H4.2zM4 7.3v11.2c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.3l-7.4 5.9a1 1 0 0 1-1.2 0L4 7.3z' }
   ];
 
@@ -236,6 +238,8 @@
             '<h2 class="rail__head">Contact</h2>' +
             '<ul>' +
               '<li><a href="mailto:' + SITE.email + '">' + SITE.email + '</a></li>' +
+              '<li><a href="' + SITE.linkedin + '" target="_blank" rel="noopener">' +
+                SITE.linkedinLabel + '</a></li>' +
               '<li>' + SITE.location + '</li>' +
               '<li><a href="./contact.html">Send feedback</a></li>' +
             '</ul>' +

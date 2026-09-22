@@ -250,7 +250,9 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  margin: 0;
+  /* Pull the row back by the link's own side padding so the first label
+     sits flush with the logo and the content below, not inset from it. */
+  margin: 0 0 0 calc(var(--space-3) * -1);
   padding: 0;
   max-width: none;
 }
@@ -452,8 +454,10 @@ summary:focus-visible {
 .meter > span { display: block; height: 100%; background: var(--blue-600); border-radius: 999px; }
 
 .timeline { list-style: none; padding: 0; border-left: 2px solid var(--line); margin-left: var(--space-2); }
-.timeline li { position: relative; padding: 0 0 var(--space-4) var(--space-4); }
-.timeline li::before {
+/* Direct children only — nested lists (e.g. .photo-row) must not inherit the
+   entry indent or pick up a timeline dot of their own. */
+.timeline > li { position: relative; padding: 0 0 var(--space-4) var(--space-4); }
+.timeline > li::before {
   content: "";
   position: absolute;
   left: -7px; top: 8px;
@@ -463,6 +467,58 @@ summary:focus-visible {
   border: 2px solid var(--surface);
 }
 .timeline time { display: block; font-size: var(--step--1); font-weight: bold; color: var(--blue-600); }
+
+/* Photo strip inside a timeline entry. Three across on desktop, stacking to
+   one column on a phone so faces stay big enough to read. */
+.photo-row {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  max-width: var(--measure);
+}
+.photo-row img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .photo-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* A single supporting photo inside a card. */
+.card__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-top: var(--space-3);
+}
+
+/* Video embed — poster frame until played, so nothing downloads on load. */
+.video-figure { margin: 0; max-width: var(--measure); }
+.video-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+.video-figure figcaption {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  margin-top: var(--space-2);
+}
 
 /* FAQ — trust signal, uses native disclosure so it works without JS */
 .faq { max-width: var(--measure); }
@@ -564,7 +620,8 @@ summary:focus-visible {
   }
   .nav.is-open { display: block; }
 
-  .nav__list { flex-direction: column; align-items: stretch; gap: var(--space-1); }
+  /* Stacked menu: full-width rows, so the flush-left pull is reset. */
+  .nav__list { flex-direction: column; align-items: stretch; gap: var(--space-1); margin-left: 0; }
   .nav__link {
     padding: 0.8rem var(--space-3);
     font-size: var(--step-0);
@@ -638,8 +695,10 @@ summary:focus-visible {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-1);
-  margin: 0;
+  /* Same flush-left correction as the primary row above. */
+  margin: 0 0 0 calc(var(--space-2) * -1);
   padding: var(--space-1) 0;
   max-width: none;
 }
