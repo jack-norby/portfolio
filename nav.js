@@ -49,7 +49,7 @@
     ],
     'portfolio.html': [
       { id: 'work',     label: 'The work' },
-      { id: 'video',    label: 'Campaign video' },
+      { id: 'solesync', label: 'SoleSync project' },
       { id: 'roles',    label: 'Roles' },
       { id: 'approach', label: 'Approach' }
     ],
@@ -173,6 +173,13 @@
 
     return '' +
       '<div class="col-sticky col-sticky--rail">' +
+      /* The diagram's "adverts / offers" slot, used for what I am offering. */
+      '<section class="rail__card rail__card--offer">' +
+        '<h2 class="rail__head">Open to work</h2>' +
+        '<p>Looking for a marketing internship for summer 2027.</p>' +
+        '<a class="btn btn--primary btn--sm" href="./contact.html">Get in touch</a>' +
+      '</section>' +
+
       '<section class="rail__card">' +
         '<h2 class="rail__head">Latest</h2>' +
         '<ul class="rail__news">' +
@@ -183,13 +190,6 @@
           '<li><time datetime="2026-05">May 2026</time>' +
             'Wrapped a year with UniMovers after launching their Ames market.</li>' +
         '</ul>' +
-      '</section>' +
-
-      /* The diagram's "adverts / offers" slot, used for what I am offering. */
-      '<section class="rail__card rail__card--offer">' +
-        '<h2 class="rail__head">Open to work</h2>' +
-        '<p>Looking for a marketing internship for summer 2027.</p>' +
-        '<a class="btn btn--primary btn--sm" href="./contact.html">Get in touch</a>' +
       '</section>' +
 
 
@@ -212,7 +212,7 @@
           '<div>' +
             '<h2 class="rail__head">' + SITE.name + '</h2>' +
             '<p style="max-width:32ch">' + SITE.tagline + ' student at Iowa State ' +
-            'University. Social media marketing, team building, and front-end work.</p>' +
+            'University. Social media marketing, team building, and AI-assisted builds.</p>' +
           '</div>' +
           '<div>' +
             '<h2 class="rail__head">Primary links</h2>' +
@@ -241,7 +241,7 @@
         '<div class="site-footer__legal">' +
           '<p>&copy; ' + new Date().getFullYear() + ' ' + SITE.name +
           '. All rights reserved.</p>' +
-          '<p>Built and maintained by hand &middot; ' +
+          '<p>Built with Claude Code &middot; ' +
           '<a href="mailto:' + SITE.email + '">' + SITE.email + '</a></p>' +
         '</div>' +
       '</div>';
