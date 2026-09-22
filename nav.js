@@ -120,12 +120,6 @@
               '<span class="brand__tag">' + SITE.tagline + '</span>' +
             '</span>' +
           '</a>' +
-          /* Informational graphics: describes in images what the site is about. */
-          '<figure class="header-graphic">' +
-            '<img src="./images/header-banner.svg"' +
-                 ' alt="Four icons summarising this site: social media campaigns, team building, leadership, and hand-built web pages"' +
-                 ' width="470" height="96">' +
-          '</figure>' +
           '<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">' +
             '<span class="nav__bars" aria-hidden="true"><span></span><span></span><span></span></span>' +
             '<span>Menu</span>' +
@@ -198,15 +192,6 @@
         '<a class="btn btn--primary btn--sm" href="./contact.html">Get in touch</a>' +
       '</section>' +
 
-      '<section class="rail__card">' +
-        '<h2 class="rail__head">Site info</h2>' +
-        '<ul class="rail__info">' +
-          '<li>Four pages, hand-written HTML, CSS and JavaScript</li>' +
-          '<li>No framework and no page builder</li>' +
-          '<li>Built to WCAG AA contrast</li>' +
-          '<li>Iowa State University, class of 2028</li>' +
-        '</ul>' +
-      '</section>' +
 
       '<section class="rail__card">' +
         '<h2 class="rail__head">Find me</h2>' +

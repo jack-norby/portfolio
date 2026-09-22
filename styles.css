@@ -429,6 +429,7 @@ summary:focus-visible {
 
 .split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-6); align-items: start; }
 
+
 .callout {
   background: var(--blue-050);
   border-left: 4px solid var(--blue-600);
@@ -466,6 +467,13 @@ summary:focus-visible {
   background: var(--blue-600);
   border: 2px solid var(--surface);
 }
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 46ch;
+}
+
 .timeline time { display: block; font-size: var(--step--1); font-weight: bold; color: var(--blue-600); }
 
 /* Photo strip inside a timeline entry. Three across on desktop, stacking to
@@ -670,12 +678,17 @@ summary:focus-visible {
 
 /* ---------- Header: logo + informational graphics ---------- */
 .header-top {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   gap: var(--space-4);
   padding-block: var(--space-3);
 }
+/* The brand must be allowed to shrink here, or its nowrap name plus the menu
+   button overflow a narrow phone. */
+.header-top .brand { flex: 1 1 auto; min-width: 0; }
+.header-top .brand__text { min-width: 0; }
 
 .brand__text { display: grid; }
 .brand__name { font-size: var(--step-1); line-height: 1.2; white-space: nowrap; }
@@ -830,14 +843,17 @@ a.social__link:hover { background: var(--accent-600); transform: translateY(-2px
   z-index: 1;
   left: 0;
   bottom: 0;
-  max-width: 40%;
+  max-width: 60%;
   padding: var(--space-4);
   margin: 0;
   color: #fff;
 }
 .hero-image__caption .eyebrow { color: #9fc8ee; margin-bottom: var(--space-1); }
-.hero-image__caption strong {
+.hero-image__caption strong,
+.hero-image__caption h1 {
   display: block;
+  margin: 0;
+  color: #fff;
   font-size: clamp(1.4rem, 0.9rem + 1.6vw, 2.1rem);
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -872,6 +888,7 @@ a.social__link:hover { background: var(--accent-600); transform: translateY(-2px
 }
 .col-mid .wrap { padding-inline: 0; max-width: none; }
 .col-mid .split { grid-template-columns: 1fr; gap: var(--space-4); }
+
 .col-mid .grid--3 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 .col-mid .grid--2 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
@@ -911,8 +928,7 @@ a.social__link:hover { background: var(--accent-600); transform: translateY(-2px
   .col-right { padding: var(--space-3); }
   .col-sticky--rail { grid-template-columns: minmax(0, 1fr); }
 
-  .header-top { grid-template-columns: auto auto; row-gap: var(--space-2); }
-  .header-graphic { grid-column: 1 / -1; justify-self: stretch; max-width: none; }
+  .header-top { row-gap: var(--space-2); }
   .subnav__list { padding-block: var(--space-2); }
   .col-mid .section--alt { padding-inline: var(--space-3); }
 
